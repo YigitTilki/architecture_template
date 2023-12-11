@@ -15,7 +15,7 @@ dependencies:
     sdk: flutter
 
 
-  
+  #Core Dependencies
   cupertino_icons: ^1.0.2
   kartal: ^3.5.0
   vexana: ^3.5.4
@@ -23,6 +23,7 @@ dependencies:
   flutter_riverpod: ^2.4.9
   json_annotation: ^4.8.1
   envied: ^0.5.2
+  easy_localization: ^3.0.3
 
 # dependency_overrides:
 #   cupertino_icons: 1.0.1
