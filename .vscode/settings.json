@@ -1,4 +1,8 @@
 {
     "docwriter.style": "Auto-detect",
-    "docwriter.language": "Turkish"
+    "docwriter.language": "Turkish",
+    "cSpell.words": [
+        "cupertino",
+        "kartal"
+    ]
 }
