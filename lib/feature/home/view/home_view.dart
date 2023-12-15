@@ -9,7 +9,9 @@ import 'package:gen/gen.dart';
 
 part 'widget/home_appbar.dart';
 
-class HomeView extends StatefulWidget {
+///
+final class HomeView extends StatefulWidget {
+  ///
   const HomeView({super.key});
 
   @override
