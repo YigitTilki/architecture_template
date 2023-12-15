@@ -1,13 +1,13 @@
 import 'package:architecture_template/feature/home/view/mixin/home_view_mixin.dart';
 import 'package:architecture_template/product/init/config/app_environment.dart';
-import 'package:architecture_template/product/init/language/locale_keys.g.dart';
-import 'package:architecture_template/product/init/product_localization.dart';
-import 'package:architecture_template/product/utility/constants/enums/locales.dart';
-import 'package:easy_localization/easy_localization.dart';
+import 'package:architecture_template/product/navigation/app_router.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:gen/gen.dart';
 
 part 'widget/home_appbar.dart';
+
+@RoutePage()
 
 ///
 final class HomeView extends StatefulWidget {
@@ -42,7 +42,17 @@ class _HomeViewState extends State<HomeView> with HomeViewMixin {
             const Text(
               'Change Language',
             ),
-            Row(
+            ElevatedButton(
+              onPressed: () {
+                context.router.push(
+                  HomeDetailRoute(
+                    id: '7',
+                  ),
+                );
+              },
+              child: const Text('Geri Dön'),
+            ),
+            /* Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 ElevatedButton(
@@ -64,7 +74,7 @@ class _HomeViewState extends State<HomeView> with HomeViewMixin {
                   child: const Text(LocaleKeys.general_button_save).tr(),
                 ),
               ],
-            ),
+            ), */
           ],
         ),
       ),
