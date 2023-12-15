@@ -1,7 +1,5 @@
-import 'package:architecture_template/product/init/config/app_config_interface.dart';
-import 'package:architecture_template/product/init/config/develop_env.dart';
-import 'package:architecture_template/product/init/config/prod_env.dart';
 import 'package:flutter/foundation.dart';
+import 'package:gen/gen.dart';
 
 /// App Env Manager
 final class AppEnvironment {
