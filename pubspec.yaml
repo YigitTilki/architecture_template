@@ -36,11 +36,15 @@ dependencies:
   #Navigation
   auto_route: ^7.8.4
 
+  #Modules
   widgets: 
     path: module/widgets
 
   gen:
     path: module/gen
+
+  common:
+    path: module/common
 
 
 
