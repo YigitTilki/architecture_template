@@ -27,5 +27,8 @@
     "workbench.colorCustomizations": {
         "tab.activeBorderTop": "#FFE81F"
     },
-    "editor.inlineSuggest.enabled": true
+    "editor.inlineSuggest.enabled": true,
+    "cSpell.words": [
+        "Çorlu"
+    ]
 }
