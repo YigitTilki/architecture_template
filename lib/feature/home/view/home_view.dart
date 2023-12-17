@@ -35,6 +35,12 @@ class _HomeViewState extends State<HomeView> with HomeViewMixin {
 
     return Scaffold(
       appBar: const _HomeAppBar(),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          //SuccessDialog.show(title: 'title', context: context);
+          QuestionDialog.show(title: 'title', context: context);
+        },
+      ),
       body: Center(
         child: SingleChildScrollView(
           child: Column(
