@@ -4,11 +4,6 @@ import 'package:common/common.dart';
 import 'package:flutter/material.dart';
 import 'package:gen/gen.dart';
 
-/* class ProjectNetworkImage extends CustomNetworkImage{
-  const ProjectNetworkImage({required String url}) : super(
-    imageUrl: url
-  );
-} */
 class ProjectNetworkImage extends StatelessWidget {
   const ProjectNetworkImage({required this.url, super.key});
   final String? url;
