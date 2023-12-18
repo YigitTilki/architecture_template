@@ -6,7 +6,6 @@ import 'package:architecture_template/product/init/language/locale_keys.g.dart';
 import 'package:architecture_template/product/init/product_localization.dart';
 import 'package:architecture_template/product/navigation/app_router.dart';
 import 'package:architecture_template/product/utility/constants/enums/locales.dart';
-import 'package:architecture_template/product/widgets/project_network_image.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -28,17 +27,20 @@ final class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> with HomeViewMixin {
+  List<User> _users = [];
   @override
   Widget build(BuildContext context) {
-    const url =
+    /* const url =
         'https://imageio.forbes.com/specials-images/imageserve/6090f7f251c9c6c605e612fc/Darth-Vader/0x0.jpg?format=jpg&crop=3127,1759,x0,y33,safe&width=1440';
-
+ */
     return Scaffold(
       appBar: const _HomeAppBar(),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
+        onPressed: () async {
+          _users = await loginService.users();
+          setState(() {});
           //SuccessDialog.show(title: 'title', context: context);
-          QuestionDialog.show(title: 'title', context: context);
+          //QuestionDialog.show(title: 'title', context: context);
         },
       ),
       body: Center(
@@ -62,7 +64,7 @@ class _HomeViewState extends State<HomeView> with HomeViewMixin {
                 },
                 child: const Text('Maps'),
               ),
-              /*  FloatingActionButton(
+              /* FloatingActionButton(
                 onPressed: () {
                   final dummyUsers = List<Users?>.generate(
                     10,
@@ -83,9 +85,9 @@ class _HomeViewState extends State<HomeView> with HomeViewMixin {
                 },
                 child: const Text('List'),
               ), */
-              const ProjectNetworkImage(
+              /* const ProjectNetworkImage(
                 url: url,
-              ),
+              ), */
               Assets.lottie.animZombie.lottie(
                 package: 'gen',
               ),
@@ -134,17 +136,25 @@ class _HomeViewState extends State<HomeView> with HomeViewMixin {
                   ),
                 ],
               ),
+              SizedBox(
+                height: 300,
+                width: 200,
+                child: ListView.builder(
+                  itemCount: _users.length,
+                  itemBuilder: (BuildContext context, int index) {
+                    return ListTile(
+                      title: Text(
+                        _users[index].userId.toString(),
+                      ),
+                      subtitle: Text(_users[index].body.toString()),
+                    );
+                  },
+                ),
+              ),
             ],
           ),
         ),
       ),
     );
   }
-}
-
-class Users {
-  Users({required this.name, required this.money});
-
-  final String name;
-  final int money;
 }
