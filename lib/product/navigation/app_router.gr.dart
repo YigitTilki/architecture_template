@@ -17,11 +17,11 @@ abstract class _$AppRouter extends RootStackRouter {
   final Map<String, PageFactory> pagesMap = {
     HomeDetailRoute.name: (routeData) {
       final args = routeData.argsAs<HomeDetailRouteArgs>();
-      return AutoRoutePage<dynamic>(
+      return AutoRoutePage<bool?>(
         routeData: routeData,
         child: HomeDetailView(
-          key: args.key,
           id: args.id,
+          key: args.key,
         ),
       );
     },
@@ -38,14 +38,14 @@ abstract class _$AppRouter extends RootStackRouter {
 /// [HomeDetailView]
 class HomeDetailRoute extends PageRouteInfo<HomeDetailRouteArgs> {
   HomeDetailRoute({
-    Key? key,
     required String id,
+    Key? key,
     List<PageRouteInfo>? children,
   }) : super(
           HomeDetailRoute.name,
           args: HomeDetailRouteArgs(
-            key: key,
             id: id,
+            key: key,
           ),
           initialChildren: children,
         );
@@ -58,17 +58,17 @@ class HomeDetailRoute extends PageRouteInfo<HomeDetailRouteArgs> {
 
 class HomeDetailRouteArgs {
   const HomeDetailRouteArgs({
-    this.key,
     required this.id,
+    this.key,
   });
-
-  final Key? key;
 
   final String id;
 
+  final Key? key;
+
   @override
   String toString() {
-    return 'HomeDetailRouteArgs{key: $key, id: $id}';
+    return 'HomeDetailRouteArgs{id: $id, key: $key}';
   }
 }
 
